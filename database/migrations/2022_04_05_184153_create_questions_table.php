@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('type');
             $table->unsignedBigInteger('question_text_id');
             $table->foreign('question_text_id')->references('id')->on('question_texts');
-            $table->unsignedBigInteger('answer_set_id');
-            $table->foreign('answer_set_id')->references('id')->on('answer_sets');
+            $table->unsignedBigInteger('options_set_id');
+            $table->foreign('options_set_id')->references('id')->on('options_sets');
             $table->boolean('required')->default(false);
             $table->timestamps();
         });

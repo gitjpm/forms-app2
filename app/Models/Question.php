@@ -12,4 +12,9 @@ class Question extends Model
 
     protected $guarded = ['id'];
 
+    public function text()
+    {
+        return $this->belongsTo('QuestionText');
+    }
+
 }

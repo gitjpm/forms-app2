@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Libs\QuestionTypes;
-use App\Models\AnswerSet;
+use App\Models\OptionsSet;
 use App\Models\Question;
 use App\Models\QuestionText;
 use Faker\Factory;
@@ -20,7 +20,6 @@ class QuestionsSeeder extends Seeder
     public function run()
     {
         $faker = Factory::create();
-        $texts = [];
 
         // texts
         for($i = 0; $i < 10; $i++){
@@ -28,10 +27,10 @@ class QuestionsSeeder extends Seeder
                 'text' => '¿'.$faker->text.'?'
             ]);
 
-            $question = Question::create([
+            Question::create([
                 'type' => QuestionTypes::SINGLE_OPTION,
                 'question_text_id' => $text->id,
-                'answer_set_id' => AnswerSet::where('name', 'SI_NO')->first()->id,
+                'options_set_id' => OptionsSet::where('name', 'SI_NO')->first()->id,
                 'required' => true
             ]);
         }

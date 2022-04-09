@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('answer_text_id');
             $table->foreign('answer_text_id')->references('id')->on('answer_texts');
-            $table->unsignedBigInteger('answer_set_id');
-            $table->foreign('answer_set_id')->references('id')->on('answer_sets');
+            $table->unsignedBigInteger('options_set_id');
+            $table->foreign('options_set_id')->references('id')->on('options_sets');
             $table->integer('order')->default(0);
             $table->integer('weight')->default(0)->nullable();
             $table->timestamps();
